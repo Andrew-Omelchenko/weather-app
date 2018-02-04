@@ -1,0 +1,63 @@
+/* basic styles with flex */
+body {
+	font-family: sans-serif;
+	font-stretch: ultra-condensed;
+}
+
+.title, .controls {
+	width: 100%;
+	text-align: center;
+}
+
+.flex-container {
+	margin-top: 21px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.left-panel, .right-panel {
+	width: 50%;
+}
+
+.left-panel {
+	text-align: left;
+}
+
+.right-top {
+	width: 50%;
+	float: right;
+}
+
+.right-bottom {
+	width: 100%;
+	float: right;
+	text-align: right;
+	font-size: 24px;
+}
+
+.temperature {
+	font-size: 42px;
+}
+
+.humidity-icon {
+	width: 24px;
+	height: 24px;
+}
+
+@media screen and (max-width: 299px) {
+	.flex-container, .title, .controls {
+		width: 300px;
+		flex-wrap: none;
+	}
+}
+
+@media screen and (min-width: 300px) {
+	.flex-container, .title, .controls {
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

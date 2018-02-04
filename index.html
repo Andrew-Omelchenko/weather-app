@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/helper.js"></script>
+    <script type="text/javascript" src="js/models/model.js"></script>
+    <script type="text/javascript" src="js/views/view.js"></script>
+    <script type="text/javascript" src="js/services/service.js"></script>
+    <script type="text/javascript" src="js/controllers/controller.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h1 class="title">Weather App</h1>
+        <div class="controls">
+          <input id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." />
+          <button id="clear-button">X</button>
+          <button id="go-button">Go</button>
+          <datalist id="list-of-cities"></datalist>
+        </div>
+        <div class="controls">
+          <select id="base-units">
+            <option value="si-base-units">&deg;C, m/s</option>
+              <option value="us-customary-units">&deg;F, mph</option>
+          </select>
+        </div>
+      </header>
+      <div class="flex-container">
+        <div class="left-panel">
+          <div class="temperature">
+            <span id="temperature">0</span>&deg;<span id="temperature-units">temperature-units</span>
+          </div>
+          <div class="add-temp">
+            min: <span id="temp-min">0</span>&deg;<span id="temp-min-units">temperature-units</span>
+          </div>
+          <div class="add-temp">
+            max: <span id="temp-max">0</span>&deg;<span id="temp-max-units">temperature-units</span>
+          </div>
+          <hr />
+          <div class="location">
+            <span id="location">location</span>
+          </div>
+        </div>
+        <div class="right-panel">
+          <div class="right-top">
+            <img id="icon" src="" alt="weather-state" />
+          </div>
+          <div class="right-bottom">
+            <div id="description">none</div>
+            <div class="humidity">
+              <img class="humidity-icon" src="img/humidity.png" alt="humidity: " />
+              <span id="humidity">0</span>%
+            </div>
+            <div class="wind">
+              <span id="velocity">0</span><span id="velocity-units">velocity-units</span>
+              <span id="direction">direction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
