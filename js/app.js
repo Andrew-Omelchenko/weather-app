@@ -1,18 +1,20 @@
 var currentWeatherObject = null;
 var currentScreen = null;
+var weatherService = new WeatherService();
 
 window.onload = function() {
   currentScreen = new Screen(document);
   currentScreen.init();
-  currentWeatherObject = new Weather();
-  getWeather("Kyiv");
-  updateScreen(currentScreen, currentWeatherObject);
+  currentWeatherObject = new Weather(mockData);
+
+  weatherService.getWeather("Kyiv");
+  currentScreen.update(currentWeatherObject);
 
   // add event listener to Go button
   document.getElementById("go-button").addEventListener("click", function(event) {
     var loc = document.getElementById("loc-field").value;
     if (loc == "") return;
-    getWeather(loc);
+    weatherService.getWeather(loc);
   });
 
   // add event listener to Clear button

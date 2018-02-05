@@ -5,6 +5,33 @@ const iconLink = "http://openweathermap.org/img/w/";
 // List of verbose directions
 const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
+// Mock weather data
+const mockData = {"coord":{"lon":-0.13,"lat":51.51},
+  "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"02n"}],
+  "base":"stations",
+  "main":{"temp":273.92,"pressure":1028,"humidity":74,"temp_min":273.15,"temp_max":275.15},
+  "visibility":10000,"wind":{"speed":3.6,"deg":60},"clouds":{"all":8},"dt":1517808000,
+  "sys":{"type":1,"id":5091,"message":0.0048,"country":"GB","sunrise":1517815931,
+  "sunset":1517849855},"id":2643743,"name":"London","cod":200};
+
+// ids of elements
+const ids = {
+  temperatureId: "temperature",
+  temperatureUnitsId: "temperature-units",
+  tempMinId: "temp-min",
+  tempMinUnitsId: "temp-min-units",
+  tempMaxId: "temp-max",
+  tempMaxUnitsId: "temp-max-units",
+  locationId: "location",
+  iconId: "icon",
+  descriptionId: "description",
+  humidityId: "humidity",
+  velocityId: "velocity",
+  velocityUnitsId: "velocity-units",
+  directionId: "direction",
+  cityListId: "list-of-cities"
+};
+
 // List of cities
 const cities = [
   "Kyiv",
