@@ -40,15 +40,19 @@ class Screen {
     });
 
     // add event listener to Clear button
-    doc.getElementById("clear-button").addEventListener("click", function(event) {
-      let fld = doc.getElementById("loc-field");
-      fld.value = "";
-    });
+    doc
+      .getElementById("clear-button")
+      .addEventListener("click", function(event) {
+        let fld = doc.getElementById("loc-field");
+        fld.value = "";
+      });
 
     // add event listener to select element
-    doc.getElementById("base-units").addEventListener("change", function(event) {
-      controller.switchUnits(event.target.value);
-    });
+    doc
+      .getElementById("base-units")
+      .addEventListener("change", function(event) {
+        controller.switchUnits(event.target.value);
+      });
   }
 
   update(weather) {

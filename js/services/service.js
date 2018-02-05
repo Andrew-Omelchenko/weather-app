@@ -10,16 +10,19 @@ class WeatherService {
       cache: "default",
       credentials: "omit"
     };
-    return fetch(url, init).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(response.status);
-      }
-    }).then((data) => {
+    return fetch(url, init)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.status);
+        }
+      })
+      .then(data => {
         return data;
-    }).catch((error) => {
-      console.log(error);
-    });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }

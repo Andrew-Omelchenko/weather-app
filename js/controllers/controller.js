@@ -1,5 +1,8 @@
 class WeatherController {
-  constructor(doc) {
+  constructor(doc, wnd) {
+    this._doc = doc;
+    this._wnd = wnd;
+    this._base = extractBase(this._wnd.location.href);
     this._weatherService = new WeatherService();
     this._weather = new Weather(mockData, "metric");
     this._screen = new Screen(doc, this._weather, this);
@@ -12,9 +15,24 @@ class WeatherController {
   }
 
   changeLocation(loc) {
-    this._weatherService.getWeather(loc, this._weather.currentUnits).then((data) => {
-      this._weather = new Weather(data, this._weather.currentUnits);
-      this._screen.update(this._weather);
-    });
+    this._weatherService
+      .getWeather(loc, this._weather.currentUnits)
+      .then(data => {
+        this._weather = new Weather(data, this._weather.currentUnits);
+        this._screen.update(this._weather);
+        this._wnd.history.pushState(
+          {},
+          this._doc.title,
+          this._base + "?city=" + loc
+        );
+      });
+  }
+
+  start(startUrl) {
+    let loc = parseLocation(startUrl);
+    if (!loc) {
+      loc = "Kyiv";
+    }
+    this.changeLocation(loc);
   }
 }

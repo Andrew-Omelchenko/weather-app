@@ -20,12 +20,33 @@ const unitSystems = {
 const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
 // Mock weather data
-const mockData = {"coord":{"lon":30.52,"lat":50.45},
-  "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],
-  "base":"stations","main":{"temp":-4.66,"pressure":1019,"humidity":57,
-  "temp_min":-5,"temp_max":-4},"visibility":10000,"wind":{"speed":4,"deg":320},
-  "clouds":{"all":0},"dt":1517839200,"sys":{"type":1,"id":7358,"message":0.0018,
-  "country":"UA","sunrise":1517808362,"sunset":1517842714},"id":703448,"name":"Kyiv","cod":200}
+const mockData = {
+  coord: { lon: 30.52, lat: 50.45 },
+  weather: [{ id: 800, main: "Clear", description: "clear sky", icon: "01d" }],
+  base: "stations",
+  main: {
+    temp: -4.66,
+    pressure: 1019,
+    humidity: 57,
+    temp_min: -5,
+    temp_max: -4
+  },
+  visibility: 10000,
+  wind: { speed: 4, deg: 320 },
+  clouds: { all: 0 },
+  dt: 1517839200,
+  sys: {
+    type: 1,
+    id: 7358,
+    message: 0.0018,
+    country: "UA",
+    sunrise: 1517808362,
+    sunset: 1517842714
+  },
+  id: 703448,
+  name: "Kyiv",
+  cod: 200
+};
 
 // ids of elements
 const ids = {
