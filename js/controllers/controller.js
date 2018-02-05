@@ -1,11 +1,8 @@
 class WeatherController {
   constructor(doc) {
     this._weatherService = new WeatherService();
-    console.log(this._weatherService);
     this._weather = new Weather(mockData, "metric");
-    console.log(this._weather);
     this._screen = new Screen(doc, this._weather, this);
-    console.log(this._screen);
     this._screen.update(this._weather);
   }
 
