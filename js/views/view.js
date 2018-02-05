@@ -1,6 +1,8 @@
 class Screen {
-  constructor(doc) {
+  constructor(doc, weather, controller) {
     this._doc = doc;
+    this._controller = controller;
+    this._weather = weather;
     this._temperatureId = doc.getElementById(ids.temperatureId);
     this._temperatureUnitsId = doc.getElementById(ids.temperatureUnitsId);
     this._tempMinId = doc.getElementById(ids.tempMinId);
@@ -25,15 +27,38 @@ class Screen {
       opt.value = cities[i];
       this._cityListId.appendChild(opt);
     }
+
+    this._addListeners(this._doc, this._controller);
+  }
+
+  _addListeners(doc, controller) {
+    // add event listener to Go button
+    doc.getElementById("go-button").addEventListener("click", function(event) {
+      let loc = doc.getElementById("loc-field").value;
+      if (loc == "") return;
+      controller.changeLocation(loc);
+    });
+
+    // add event listener to Clear button
+    doc.getElementById("clear-button").addEventListener("click", function(event) {
+      let fld = doc.getElementById("loc-field");
+      fld.value = "";
+    });
+
+    // add event listener to select element
+    doc.getElementById("base-units").addEventListener("change", function(event) {
+      controller.switchUnits(event.target.value);
+    });
   }
 
   update(weather) {
+    this._weather = weather;
     this._temperatureId.innerHTML = Math.round(weather.temperature);
     this._temperatureUnitsId.innerHTML = weather.temperatureUnits;
     this._tempMinId.innerHTML = Math.round(weather.tempMin);
-    this._tempMinUnitsId.innerHTML = this._temperatureUnits;
+    this._tempMinUnitsId.innerHTML = weather.temperatureUnits;
     this._tempMaxId.innerHTML = Math.round(weather.tempMax);
-    this._tempMaxUnitsId.innerHTML = this._temperatureUnits;
+    this._tempMaxUnitsId.innerHTML = weather.temperatureUnits;
     this._locationId.innerHTML = weather.location;
     this._iconId.src = iconLink + weather.weatherState + ".png";
     this._descriptionId.innerHTML = weather.description;

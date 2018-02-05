@@ -20,13 +20,12 @@ const unitSystems = {
 const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
 // Mock weather data
-const mockData = {"coord":{"lon":-0.13,"lat":51.51},
-  "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"02n"}],
-  "base":"stations",
-  "main":{"temp":273.92,"pressure":1028,"humidity":74,"temp_min":273.15,"temp_max":275.15},
-  "visibility":10000,"wind":{"speed":3.6,"deg":60},"clouds":{"all":8},"dt":1517808000,
-  "sys":{"type":1,"id":5091,"message":0.0048,"country":"GB","sunrise":1517815931,
-  "sunset":1517849855},"id":2643743,"name":"London","cod":200};
+const mockData = {"coord":{"lon":30.52,"lat":50.45},
+  "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],
+  "base":"stations","main":{"temp":-4.66,"pressure":1019,"humidity":57,
+  "temp_min":-5,"temp_max":-4},"visibility":10000,"wind":{"speed":4,"deg":320},
+  "clouds":{"all":0},"dt":1517839200,"sys":{"type":1,"id":7358,"message":0.0018,
+  "country":"UA","sunrise":1517808362,"sunset":1517842714},"id":703448,"name":"Kyiv","cod":200}
 
 // ids of elements
 const ids = {

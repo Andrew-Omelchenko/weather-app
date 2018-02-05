@@ -17,8 +17,7 @@ class WeatherService {
         throw new Error(response.status);
       }
     }).then((data) => {
-      let weatherObject = new Weather(data, units);
-      currentScreen.update(weatherObject);
+        return data;
     }).catch((error) => {
       console.log(error);
     });

@@ -19,6 +19,9 @@ class Weather {
     this._direction = data.wind.deg;
   }
 
+  get currentUnits() {
+    return this._currentUnits;
+  }
   get weatherState() {
     return this._weatherState;
   }
