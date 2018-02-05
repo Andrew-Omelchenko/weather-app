@@ -1,9 +1,6 @@
 class Screen {
   constructor(doc) {
     this._doc = doc;
-    this._currentUnits = "si-base-units";
-    this._temperatureUnits = "C";
-    this._velocityUnits = "m/s";
     this._temperatureId = doc.getElementById(ids.temperatureId);
     this._temperatureUnitsId = doc.getElementById(ids.temperatureUnitsId);
     this._tempMinId = doc.getElementById(ids.tempMinId);
@@ -18,11 +15,12 @@ class Screen {
     this._velocityUnitsId = doc.getElementById(ids.velocityUnitsId);
     this._directionId = doc.getElementById(ids.directionId);
     this._cityListId = doc.getElementById(ids.cityListId);
+    this._init();
   }
 
-  init() {
-    var opt = null;
-    for (var i = 0; i < cities.length; i++) {
+  _init() {
+    let opt = null;
+    for (let i = 0; i < cities.length; i++) {
       opt = this._doc.createElement("option");
       opt.value = cities[i];
       this._cityListId.appendChild(opt);
@@ -31,7 +29,7 @@ class Screen {
 
   update(weather) {
     this._temperatureId.innerHTML = Math.round(weather.temperature);
-    this._temperatureUnitsId.innerHTML = this._temperatureUnits;
+    this._temperatureUnitsId.innerHTML = weather.temperatureUnits;
     this._tempMinId.innerHTML = Math.round(weather.tempMin);
     this._tempMinUnitsId.innerHTML = this._temperatureUnits;
     this._tempMaxId.innerHTML = Math.round(weather.tempMax);
@@ -41,13 +39,7 @@ class Screen {
     this._descriptionId.innerHTML = weather.description;
     this._humidityId.innerHTML = weather.humidity;
     this._velocityId.innerHTML = Math.round(weather.velocity);
-    this._velocityUnitsId.innerHTML = this._velocityUnits;
+    this._velocityUnitsId.innerHTML = weather.velocityUnits;
     this._directionId.innerHTML = toVerbose(weather.direction);
-    if (this._currentUnits == "us-customary-units") {
-      this._temperatureId.innerHTML = toFahrenheit(this._temperatureId.innerHTML);
-      this._tempMinId.innerHTML = toFahrenheit(this._tempMinId.innerHTML);
-      this._tempMaxId.innerHTML = toFahrenheit(this._tempMaxId.innerHTML);
-      this._velocityId.innerHTML = toMph(this._velocityId.innerHTML);
-    }
   }
 }

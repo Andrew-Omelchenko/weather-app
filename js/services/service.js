@@ -1,8 +1,8 @@
 class WeatherService {
   constructor() {}
 
-  getWeather(city) {
-    let url = apiLink + "q=" + city + "&units=metric&APPID=" + key;
+  getWeather(city, units) {
+    let url = apiLink + "q=" + city + "&units=" + units + "&APPID=" + key;
     let init = {
       method: "GET",
       headers: new Headers(),
@@ -17,7 +17,7 @@ class WeatherService {
         throw new Error(response.status);
       }
     }).then((data) => {
-      let weatherObject = new Weather(data);
+      let weatherObject = new Weather(data, units);
       currentScreen.update(weatherObject);
     }).catch((error) => {
       console.log(error);

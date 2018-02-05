@@ -2,6 +2,20 @@ const key = "c7dc2200f66725961863fb901fd1e553";
 const apiLink = "https://api.openweathermap.org/data/2.5/weather?";
 const iconLink = "http://openweathermap.org/img/w/";
 
+// Unit systems
+const unitSystems = {
+  metric: {
+    name: "metric",
+    temperatureUnit: "C",
+    velocityUnit: "m/s"
+  },
+  imperial: {
+    name: "imperial",
+    temperatureUnit: "F",
+    velocityUnit: "mph"
+  }
+};
+
 // List of verbose directions
 const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
