@@ -35,23 +35,27 @@
     </header>
     <main>
       <section class="flex-container main-panel">
-        <div class="left-panel">
-          <div class="temperature">
-            <span id="temperature">0</span>&deg;<span id="temperature-units">temperature-units</span>
+        <div class="flex-container left-panel">
+          <div class="left-top">
+            <div class="location">
+              <span id="location">location</span>
+              <span>
+                <button id="add-favorite-btn">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </span>
+            </div>
+            <div class="add-temp temp-min">
+              min: <span id="temp-min">0</span>&deg;<span id="temp-min-units">temperature-units</span>
+            </div>
+            <div class="add-temp temp-max">
+              max: <span id="temp-max">0</span>&deg;<span id="temp-max-units">temperature-units</span>
+            </div>
           </div>
-          <div class="add-temp temp-min">
-            min: <span id="temp-min">0</span>&deg;<span id="temp-min-units">temperature-units</span>
-          </div>
-          <div class="add-temp temp-max">
-            max: <span id="temp-max">0</span>&deg;<span id="temp-max-units">temperature-units</span>
-          </div>
-          <div class="location">
-            <span id="location">location</span>
-            <span>
-              <button id="add-favorite-btn">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </button>
-            </span>
+          <div class="left-top">
+            <div class="temperature">
+              <span id="temperature">0</span>&deg;<span id="temperature-units">temperature-units</span>
+            </div>
           </div>
         </div>
         <div class="flex-container right-panel">

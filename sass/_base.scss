@@ -27,37 +27,38 @@ $fg-color-sign: gold;
   }
 
   .base-units {
-    min-width: 100px;
+    min-width: 80px;
     flex-grow: 0;
   }
 
-  .left-panel {
-    width: 70%;
-  }
-
+  .left-panel,
   .right-panel {
-    width: 30%;
-    min-height: 200px;
+    min-height: 150px;
     flex-direction: column;
   }
 
   .left-panel {
+    width: 70%;
+    align-content: left;
+    align-items: left;
     text-align: left;
   }
 
+  .right-panel {
+    width: 30%;
+    align-content: right;
+    align-items: right;
+    text-align: right;
+  }
+  
   .right-top {
-    width: 50%;
-
-    #icon {
-      float: right;
-    }
+    width: 100%;
   }
 
   .right-bottom {
     width: 100%;
-    float: right;
-    text-align: right;
-    font-size: 24px;
+    font-size: 16pt;
+    line-height: 1.1;
   }
 
   .title,

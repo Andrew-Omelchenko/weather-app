@@ -16,113 +16,69 @@
 body {
   background: lightblue; }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
   .flex-container {
-    width: 480px; }
-
-  .main-panel {
-    padding: 20px;
-    background: lightblue;
-    border-radius: 10px;
-    border: 1px solid white;
-    line-height: 1.4; }
-
-  .header,
-  .footer {
-    padding: 20px 0 20px 0; }
-
-  .loc-field {
-    flex-grow: 1; }
-    .loc-field input[type="text"] {
-      width: 90%; }
-
-  .base-units {
-    min-width: 100px;
-    flex-grow: 0; }
-
-  .left-panel {
-    width: 70%; }
-
-  .right-panel {
-    width: 30%;
-    min-height: 200px;
-    flex-direction: column; }
-
-  .left-panel {
-    text-align: left; }
-
-  .right-top {
-    width: 50%; }
-    .right-top #icon {
-      float: right; }
-
-  .right-bottom {
-    width: 100%;
-    float: right;
-    text-align: right;
-    font-size: 24px; }
-
-  .title,
-  .controls {
-    width: 100%;
-    text-align: center; } }
-@media screen and (min-width: 481px) {
+    width: 320px; } }
+@media screen and (min-width: 321px) {
   .flex-container {
-    width: 480px;
+    width: 320px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto; } }
+.main-panel {
+  padding: 20px;
+  background: lightblue;
+  border-radius: 10px;
+  border: 1px solid white;
+  line-height: 1.4; }
 
-  .main-panel {
-    padding: 20px;
-    background: lightblue;
-    border-radius: 10px;
-    border: 1px solid white;
-    line-height: 1.4; }
+.header,
+.footer {
+  padding: 20px 0 20px 0; }
 
-  .header,
-  .footer {
-    padding: 20px 0 20px 0; }
+.loc-field {
+  flex-grow: 1; }
+  .loc-field input[type="text"] {
+    width: 90%; }
 
-  .loc-field {
-    flex-grow: 1; }
-    .loc-field input[type="text"] {
-      width: 90%; }
+.base-units {
+  min-width: 80px;
+  flex-grow: 0; }
 
-  .base-units {
-    min-width: 100px;
-    flex-grow: 0; }
+.left-panel,
+.right-panel {
+  min-height: 150px;
+  flex-direction: column; }
 
-  .left-panel {
-    width: 70%; }
+.left-panel {
+  width: 70%;
+  align-content: left;
+  align-items: left;
+  text-align: left; }
 
-  .right-panel {
-    width: 30%;
-    min-height: 200px;
-    flex-direction: column; }
+.right-panel {
+  width: 30%;
+  align-content: right;
+  align-items: right;
+  text-align: right; }
 
-  .left-panel {
-    text-align: left; }
+.right-top {
+  width: 100%; }
 
-  .right-top {
-    width: 50%; }
-    .right-top #icon {
-      float: right; }
+.right-bottom {
+  width: 100%;
+  font-size: 16pt;
+  line-height: 1.1; }
 
-  .right-bottom {
-    width: 100%;
-    float: right;
-    text-align: right;
-    font-size: 24px; }
+.title,
+.controls {
+  width: 100%;
+  text-align: center; }
 
-  .title,
-  .controls {
-    width: 100%;
-    text-align: center; } }
 .temperature {
-  font-size: 50pt; }
+  font-size: 42pt; }
 
 .add-temp {
-  font-size: 18pt; }
+  font-size: 10pt; }
 
 .temp-min {
   color: darkblue; }
@@ -131,7 +87,7 @@ body {
   color: crimson; }
 
 .location {
-  font-size: 18pt;
+  font-size: 10pt;
   color: maroon; }
 
 .humidity-icon {
@@ -146,14 +102,14 @@ body {
   color: red; }
 
 .btn {
-  font-size: 14pt;
+  font-size: 12pt;
   border-radius: 5px;
   border: 1px solid white;
   color: white;
   background: lightblue;
-  padding: 10px; }
+  padding: 5px; }
 
 .wide {
-  width: 140px; }
+  width: 100px; }
 
 /*# sourceMappingURL=style.css.map */

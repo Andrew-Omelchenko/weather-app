@@ -23,28 +23,28 @@ body {
 	background: $bg-color-main-body;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
 	.flex-container {
-		width: 480px;
+		width: 320px;
 	}
-	@include flex-settings;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 321px) {
 	.flex-container {
-		width: 480px;
+		width: 320px;
 		margin-left: auto;
 		margin-right: auto;
 	}
-	@include flex-settings;
 }
 
+@include flex-settings;
+
 .temperature {
-	font-size: 50pt;
+	font-size: 42pt;
 }
 
 .add-temp {
-	font-size: 18pt;
+	font-size: 10pt;
 }
 
 .temp-min {
@@ -56,7 +56,7 @@ body {
 }
 
 .location {
-	font-size: 18pt;
+	font-size: 10pt;
 	color: $fg-color-location;
 }
 
@@ -75,14 +75,14 @@ body {
 }
 
 .btn {
-	font-size: 14pt;
+	font-size: 12pt;
 	border-radius: 5px;
 	border: 1px solid white;
 	color: white;
 	background: $bg-color-main-body;
-	padding: 10px;
+	padding: 5px;
 }
 
 .wide {
-	width: 140px;
+	width: 100px;
 }
