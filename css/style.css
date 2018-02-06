@@ -87,12 +87,15 @@ body {
   color: crimson; }
 
 .location {
-  font-size: 10pt;
+  font-size: 12pt;
   color: maroon; }
 
 .humidity-icon {
   width: 24px;
   height: 24px; }
+
+#add-favorite-btn {
+  color: yellows; }
 
 .fa-star,
 .fa-history {
@@ -107,7 +110,7 @@ body {
   border: 1px solid white;
   color: white;
   background: lightblue;
-  padding: 5px; }
+  padding: 5px 8px 5px 8px; }
 
 .wide {
   width: 100px; }

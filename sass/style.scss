@@ -56,13 +56,17 @@ body {
 }
 
 .location {
-	font-size: 10pt;
+	font-size: $font-size-location;
 	color: $fg-color-location;
 }
 
 .humidity-icon {
 	width: 24px;
 	height: 24px;
+}
+
+#add-favorite-btn {
+	color: yellows;
 }
 
 .fa-star,
@@ -80,7 +84,7 @@ body {
 	border: 1px solid white;
 	color: white;
 	background: $bg-color-main-body;
-	padding: 5px;
+	padding: 5px 8px 5px 8px;
 }
 
 .wide {

@@ -2,6 +2,7 @@ $bg-color-main-body: lightblue;
 $bg-color-main-panel: lightblue;
 $fg-color-location: maroon;
 $fg-color-sign: gold;
+$font-size-location: 12pt;
 
 @mixin flex-settings {
 
@@ -50,7 +51,7 @@ $fg-color-sign: gold;
     align-items: right;
     text-align: right;
   }
-  
+
   .right-top {
     width: 100%;
   }
