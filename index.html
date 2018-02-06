@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/config.js"></script>
@@ -16,31 +18,30 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="content">
-      <header>
-        <div class="controls">
-          <input id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." />
-          <datalist id="list-of-cities"></datalist>
-        </div>
-        <div class="controls">
-          <select id="base-units">
-            <option value="metric">&deg;C, m/s</option>
-              <option value="imperial">&deg;F, mph</option>
-          </select>
-        </div>
-      </header>
-      <div class="flex-container">
+    <header class="flex-container header">
+      <div>
+        <input id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." />
+        <datalist id="list-of-cities"></datalist>
+      </div>
+      <div>
+        <select id="base-units">
+          <option value="metric">&deg;C, m/s</option>
+          <option value="imperial">&deg;F, mph</option>
+        </select>
+      </div>
+    </header>
+    <main>
+      <section class="flex-container main-panel">
         <div class="left-panel">
           <div class="temperature">
             <span id="temperature">0</span>&deg;<span id="temperature-units">temperature-units</span>
           </div>
-          <div class="add-temp">
+          <div class="add-temp temp-min">
             min: <span id="temp-min">0</span>&deg;<span id="temp-min-units">temperature-units</span>
           </div>
-          <div class="add-temp">
+          <div class="add-temp temp-max">
             max: <span id="temp-max">0</span>&deg;<span id="temp-max-units">temperature-units</span>
           </div>
-          <hr />
           <div class="location">
             <span id="location">location</span>
             <span>
@@ -66,35 +67,35 @@
             </div>
           </div>
         </div>
+      </section>
+    </main>
+    <footer class="flex-container footer">
+      <div>
+        <span>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span>
+        <span>
+          <select id="favorites-lst"></select>
+        </span>
+        <span>
+          <button id="clear-favorites-btn">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+          </button>
+        </span>
       </div>
-      <div class="controls">
-        <div>
-          <span>
-            <i class="fa fa-star" aria-hidden="true"></i>
-          </span>
-          <span>
-            <select id="favorites-lst"></select>
-          </span>
-          <span>
-            <button id="clear-favorites-btn">
-              <i class="fa fa-times-circle" aria-hidden="true"></i>
-            </button>
-          </span>
-        </div>
-        <div>
-          <span>
-            <i class="fa fa-history" aria-hidden="true"></i>
-          </span>
-          <span>
-            <select id="history-lst"></select>
-          </span>
-          <span>
-            <button id="clear-history-btn">
-              <i class="fa fa-times-circle" aria-hidden="true"></i>
-            </button>
-          </span>
-        </div>
+      <div>
+        <span>
+          <i class="fa fa-history" aria-hidden="true"></i>
+        </span>
+        <span>
+          <select id="history-lst"></select>
+        </span>
+        <span>
+          <button id="clear-history-btn">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+          </button>
+        </span>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

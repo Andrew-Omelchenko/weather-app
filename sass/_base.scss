@@ -1,0 +1,52 @@
+$bg-color-main-body: dodgerblue;
+$bg-color-main-panel: white;
+$fg-color-location: maroon;
+$fg-color-sign: gold;
+
+@mixin flex-settings {
+
+  .main-panel {
+    padding: 20px;
+    background: $bg-color-main-panel;
+    border-radius: 10px;
+  }
+
+  .header,
+  .footer {
+    padding: 20px 0 20px 0;
+  }
+
+  .left-panel {
+    width: 70%;
+  }
+
+  .right-panel {
+    width: 30%;
+  }
+
+  .left-panel {
+    text-align: left;
+  }
+
+  .right-top {
+    width: 50%;
+    float: right;
+
+    #icon {
+      float: right;
+    }
+  }
+
+  .right-bottom {
+    width: 100%;
+    float: right;
+    text-align: right;
+    font-size: 24px;
+  }
+
+  .title,
+  .controls {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,63 +1,133 @@
-/* basic styles with flex */
-body {
-	font-family: sans-serif;
-	font-stretch: ultra-condensed;
-}
-
-.title, .controls {
-	width: 100%;
-	text-align: center;
-}
+* {
+  font-family: "Roboto", sans-serif;
+  font-stretch: ultra-condensed;
+  box-sizing: border-box; }
 
 .flex-container {
-	margin-top: 21px;
-	text-align: center;
-	width: 100%;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center; }
+  .flex-container.center {
+    justify-content: center;
+    align-items: center; }
 
-.left-panel, .right-panel {
-	width: 50%;
-}
+body {
+  background: dodgerblue; }
 
-.left-panel {
-	text-align: left;
-}
+@media screen and (max-width: 480px) {
+  .flex-container {
+    width: 480px; }
 
-.right-top {
-	width: 50%;
-	float: right;
-}
+  .main-panel {
+    padding: 20px;
+    background: white;
+    border-radius: 10px; }
 
-.right-bottom {
-	width: 100%;
-	float: right;
-	text-align: right;
-	font-size: 24px;
-}
+  .header,
+  .footer {
+    padding: 20px 0 20px 0; }
 
+  .left-panel {
+    width: 70%; }
+
+  .right-panel {
+    width: 30%; }
+
+  .left-panel {
+    text-align: left; }
+
+  .right-top {
+    width: 50%;
+    float: right; }
+    .right-top #icon {
+      float: right; }
+
+  .right-bottom {
+    width: 100%;
+    float: right;
+    text-align: right;
+    font-size: 24px; }
+
+  .title,
+  .controls {
+    width: 100%;
+    text-align: center; } }
+@media screen and (min-width: 481px) {
+  .flex-container {
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .main-panel {
+    padding: 20px;
+    background: white;
+    border-radius: 10px; }
+
+  .header,
+  .footer {
+    padding: 20px 0 20px 0; }
+
+  .left-panel {
+    width: 70%; }
+
+  .right-panel {
+    width: 30%; }
+
+  .left-panel {
+    text-align: left; }
+
+  .right-top {
+    width: 50%;
+    float: right; }
+    .right-top #icon {
+      float: right; }
+
+  .right-bottom {
+    width: 100%;
+    float: right;
+    text-align: right;
+    font-size: 24px; }
+
+  .title,
+  .controls {
+    width: 100%;
+    text-align: center; } }
 .temperature {
-	font-size: 42px;
-}
+  font-size: 42pt; }
+
+.add-temp {
+  font-size: 18pt; }
+
+.temp-min {
+  color: darkblue; }
+
+.temp-max {
+  color: crimson; }
+
+.location {
+  font-size: 12pt;
+  color: maroon; }
 
 .humidity-icon {
-	width: 24px;
-	height: 24px;
-}
+  width: 24px;
+  height: 24px; }
 
-@media screen and (max-width: 299px) {
-	.flex-container, .title, .controls {
-		width: 300px;
-		flex-wrap: none;
-	}
-}
+.fa-star,
+.fa-history {
+  color: gold; }
 
-@media screen and (min-width: 300px) {
-	.flex-container, .title, .controls {
-		width: 300px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
+.fa-times-circle {
+  color: red; }
+
+#loc-field,
+#base-units {
+  font-size: 14pt;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+  background: dodgerblue;
+  padding: 5px; }
+
+/*# sourceMappingURL=style.css.map */
