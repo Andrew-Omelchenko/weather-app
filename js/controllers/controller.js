@@ -26,7 +26,7 @@ class WeatherController {
         this._wnd.history.pushState(
           {},
           this._doc.title,
-          this._base + "?city=" + loc
+          `${this._base}?city=${this._weather.location},${this._weather.country}`
         );
       });
   }
@@ -34,7 +34,7 @@ class WeatherController {
   start(startUrl) {
     let loc = parseLocation(startUrl);
     if (!loc) {
-      loc = "Kyiv";
+      loc = "Kyiv,UA";
     }
     this.changeLocation(loc);
   }

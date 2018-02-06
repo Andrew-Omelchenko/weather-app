@@ -60,7 +60,7 @@ class Screen {
     this._tempMinUnitsId.innerHTML = weather.temperatureUnits;
     this._tempMaxId.innerHTML = Math.round(weather.tempMax);
     this._tempMaxUnitsId.innerHTML = weather.temperatureUnits;
-    this._locationId.innerHTML = weather.location;
+    this._locationId.innerHTML = `${weather.location}, ${weather.country}`;
     this._iconId.src = iconLink + weather.weatherState + ".png";
     this._descriptionId.innerHTML = weather.description;
     this._humidityId.innerHTML = weather.humidity;

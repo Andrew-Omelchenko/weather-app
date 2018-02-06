@@ -13,6 +13,7 @@ class Weather {
     this._tempMin = data.main.temp_min;
     this._tempMax = data.main.temp_max;
     this._location = data.name;
+    this._country = data.sys.country
     this._description = data.weather[0].main;
     this._humidity = data.main.humidity;
     this._velocity = data.wind.speed;
@@ -39,6 +40,9 @@ class Weather {
   }
   get location() {
     return this._location;
+  }
+  get country() {
+    return this._country;
   }
   get description() {
     return this._description;
