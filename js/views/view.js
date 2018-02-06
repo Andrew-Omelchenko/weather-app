@@ -32,18 +32,15 @@ class Screen {
   }
 
   _addListeners(doc, controller) {
-    // add event listener to Go button
-    doc.getElementById("go-button").addEventListener("click", function(event) {
-      let loc = doc.getElementById("loc-field").value;
-      if (loc == "") return;
-      controller.changeLocation(loc);
-    });
 
     // add event listener to Clear button
     doc
-      .getElementById("clear-button")
-      .addEventListener("click", function(event) {
+      .getElementById("loc-field")
+      .addEventListener("change", function(event) {
         let fld = doc.getElementById("loc-field");
+        let loc = fld.value;
+        if (loc == "") return;
+        controller.changeLocation(loc);
         fld.value = "";
       });
 
