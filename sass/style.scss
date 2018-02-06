@@ -40,7 +40,7 @@ body {
 }
 
 .temperature {
-	font-size: 42pt;
+	font-size: 50pt;
 }
 
 .add-temp {
@@ -56,7 +56,7 @@ body {
 }
 
 .location {
-	font-size: 12pt;
+	font-size: 18pt;
 	color: $fg-color-location;
 }
 
@@ -74,12 +74,15 @@ body {
 	color: red;
 }
 
-#loc-field,
-#base-units {
+.btn {
 	font-size: 14pt;
 	border-radius: 5px;
 	border: 1px solid white;
 	color: white;
 	background: $bg-color-main-body;
-	padding: 5px;
+	padding: 10px;
+}
+
+.wide {
+	width: 140px;
 }
