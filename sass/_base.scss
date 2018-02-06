@@ -1,5 +1,5 @@
 $bg-color-main-body: lightblue;
-$bg-color-main-panel: white;
+$bg-color-main-panel: lightblue;
 $fg-color-location: maroon;
 $fg-color-sign: gold;
 
@@ -9,6 +9,7 @@ $fg-color-sign: gold;
     padding: 20px;
     background: $bg-color-main-panel;
     border-radius: 10px;
+    border: 1px solid white;
     line-height: 1.4;
   }
 

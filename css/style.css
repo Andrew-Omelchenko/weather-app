@@ -22,8 +22,9 @@ body {
 
   .main-panel {
     padding: 20px;
-    background: white;
+    background: lightblue;
     border-radius: 10px;
+    border: 1px solid white;
     line-height: 1.4; }
 
   .header,
@@ -73,8 +74,9 @@ body {
 
   .main-panel {
     padding: 20px;
-    background: white;
+    background: lightblue;
     border-radius: 10px;
+    border: 1px solid white;
     line-height: 1.4; }
 
   .header,
