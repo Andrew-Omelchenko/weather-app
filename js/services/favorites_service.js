@@ -1,0 +1,3 @@
+class FavoritesService {
+  constructor(storageSvc) {}
+}
