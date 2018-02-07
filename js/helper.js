@@ -34,6 +34,12 @@ function toVerbose(value) {
   return "N";
 }
 
+function clearSelect(selectId) {
+  while (selectId.firstChild) {
+    selectId.removeChild(selectId.firstChild);
+  }
+}
+
 function populateSelect(doc, selectId, data) {
   let opt = null;
     for (let elem of data) {

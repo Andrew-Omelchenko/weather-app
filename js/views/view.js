@@ -17,13 +17,12 @@ class Screen {
     this._velocityUnitsId = doc.getElementById(ids.velocityUnitsId);
     this._directionId = doc.getElementById(ids.directionId);
     this._cityListId = doc.getElementById(ids.cityListId);
+    this._favoritesFieldId = doc.getElementById(ids.favoritesFieldId);
     this._favoritesListId = doc.getElementById(ids.favoritesListId);
-    this._clearHistoryId = doc.getElementById(ids.clearHistoryId);
     this._init();
   }
 
   _init() {
-
     populateSelect(this._doc, this._cityListId, cities);
 
     let favorites = this._controller.getFavorites();
@@ -31,10 +30,10 @@ class Screen {
     console.log(favorites);
     populateSelect(this._doc, this._favoritesListId, favorites);
 
-    this._addListeners(this._doc, this._controller);
+    this._addListeners(this, this._doc, this._controller);
   }
 
-  _addListeners(doc, controller) {
+  _addListeners(view, doc, controller) {
     // add event listener to Clear button
     doc.getElementById("loc-field").addEventListener("change", function(event) {
       let fld = doc.getElementById("loc-field");
@@ -56,6 +55,23 @@ class Screen {
       .getElementById("add-favorite-btn")
       .addEventListener("click", function(event) {
         controller.addFavorite();
+        clearSelect(view._favoritesListId);
+        populateSelect(
+          view._doc,
+          view._favoritesListId,
+          controller.getFavorites()
+        );
+      });
+
+    // add event listener to add favorite button
+    doc
+      .getElementById("favorites-field")
+      .addEventListener("change", function(event) {
+        let fld = doc.getElementById("favorites-field");
+        let loc = fld.value;
+        if (loc == "") return;
+        controller.changeLocation(loc);
+        fld.value = "";
       });
 
     // add event listener to clear favorites button
@@ -63,6 +79,12 @@ class Screen {
       .getElementById("clear-favorites-btn")
       .addEventListener("click", function(event) {
         controller.clearFavorites();
+        clearSelect(view._favoritesListId);
+        populateSelect(
+          view._doc,
+          view._favoritesListId,
+          controller.getFavorites()
+        );
       });
   }
 

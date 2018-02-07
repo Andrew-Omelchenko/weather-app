@@ -84,6 +84,10 @@ body {
 	color: $fg-color-main-body;
 	background: $bg-color-main-body;
 	padding: 5px 8px 5px 8px;
+
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 .clear-history {
