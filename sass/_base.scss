@@ -1,8 +1,10 @@
 $bg-color-main-body: lightblue;
+$fg-color-main-body: white;
 $bg-color-main-panel: lightblue;
 $fg-color-location: maroon;
 $fg-color-sign: gold;
-$font-size-location: 12pt;
+$fg-warning-color: red;
+$font-size-location: 12spt;
 
 @mixin flex-settings {
 
@@ -11,7 +13,7 @@ $font-size-location: 12pt;
     background: $bg-color-main-panel;
     border-radius: 10px;
     border: 1px solid white;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   .header,
@@ -58,7 +60,7 @@ $font-size-location: 12pt;
 
   .right-bottom {
     width: 100%;
-    font-size: 16pt;
+    font-size: 12pt;
     line-height: 1.1;
   }
 
