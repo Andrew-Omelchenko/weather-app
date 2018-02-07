@@ -36,6 +36,14 @@ class WeatherController {
         console.log("Inside changeLocation:");
         console.log(`Add to history: ${this._weather.location},${this._weather.country}`);
         this.addHistoryItem(`${this._weather.location},${this._weather.country}`);
+        let listId = this._doc.getElementById(ids.historyListId);;
+        clearSelect(listId);
+        populateSelect(
+          this._doc,
+          listId,
+          this.getHistory(),
+          "reverse"
+        );
       });
   }
 

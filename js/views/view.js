@@ -26,10 +26,7 @@ class Screen {
 
   _init() {
     populateSelect(this._doc, this._cityListId, cities, "normal");
-
-    let favorites = this._controller.getFavorites();
     console.log("Screen. Getting favorites");
-    console.log(favorites);
     populateSelect(
       this._doc,
       this._favoritesListId,
@@ -72,7 +69,8 @@ class Screen {
         populateSelect(
           view._doc,
           view._favoritesListId,
-          controller.getFavorites()
+          controller.getFavorites(),
+          "normal"
         );
       });
 
@@ -96,7 +94,8 @@ class Screen {
         populateSelect(
           view._doc,
           view._favoritesListId,
-          controller.getFavorites()
+          controller.getFavorites(),
+          "normal"
         );
       });
 
@@ -109,7 +108,8 @@ class Screen {
         populateSelect(
           view._doc,
           view._historyListId,
-          controller.getHistory()
+          controller.getHistory(),
+          "reverse"
         );
       });
   }

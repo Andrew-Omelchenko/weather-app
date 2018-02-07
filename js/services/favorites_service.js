@@ -18,6 +18,7 @@ class FavoritesService {
     // is there the same element?
     for (let elem of this._data) {
       if (elem == item) {
+        console.log("Irem is already present.")
         return;
       }
     }
