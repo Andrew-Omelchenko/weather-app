@@ -52,8 +52,11 @@ const mockData = {
 
 // ids of elements
 const ids = {
+  locFieldId: "loc-field",
+  baseUnitsId: "base-units",
   temperatureId: "temperature",
   temperatureUnitsId: "temperature-units",
+  addFavoriteBtnId: "add-favorite-btn",
   tempMinId: "temp-min",
   tempMinUnitsId: "temp-min-units",
   tempMaxId: "temp-max",
@@ -67,7 +70,11 @@ const ids = {
   directionId: "direction",
   cityListId: "list-of-cities",
   favoritesFieldId: "favorites-field",
-  favoritesListId: "favorites-lst"
+  favoritesListId: "favorites-lst",
+  clearFavoritesBtnId: "clear-favorites-btn",
+  historyFieldId: "history-field",
+  historyListId: "history-lst",
+  clearHistoryBtnId: "clear-history-btn"
 };
 
 // List of cities

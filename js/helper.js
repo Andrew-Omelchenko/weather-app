@@ -40,11 +40,19 @@ function clearSelect(selectId) {
   }
 }
 
-function populateSelect(doc, selectId, data) {
+function populateSelect(doc, selectId, data, direction) {
   let opt = null;
+  if (direction == "normal") {
     for (let elem of data) {
       opt = doc.createElement("option");
       opt.value = elem;
       selectId.appendChild(opt);
     }
+  } else if (direction == "reverse") {
+    for (let i = data.length - 1; i >= 0; i--) {
+      opt = doc.createElement("option");
+      opt.value = data[i];
+      selectId.appendChild(opt);
+    }
+  }
 }

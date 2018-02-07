@@ -19,24 +19,37 @@ class Screen {
     this._cityListId = doc.getElementById(ids.cityListId);
     this._favoritesFieldId = doc.getElementById(ids.favoritesFieldId);
     this._favoritesListId = doc.getElementById(ids.favoritesListId);
+    this._historyFieldId = doc.getElementById(ids.historyFieldId);
+    this._historyListId = doc.getElementById(ids.historyListId);
     this._init();
   }
 
   _init() {
-    populateSelect(this._doc, this._cityListId, cities);
+    populateSelect(this._doc, this._cityListId, cities, "normal");
 
     let favorites = this._controller.getFavorites();
     console.log("Screen. Getting favorites");
     console.log(favorites);
-    populateSelect(this._doc, this._favoritesListId, favorites);
+    populateSelect(
+      this._doc,
+      this._favoritesListId,
+      this._controller.getFavorites(),
+      "normal"
+    );
+    populateSelect(
+      this._doc,
+      this._historyListId,
+      this._controller.getHistory(),
+      "reverse"
+    );
 
     this._addListeners(this, this._doc, this._controller);
   }
 
   _addListeners(view, doc, controller) {
     // add event listener to Clear button
-    doc.getElementById("loc-field").addEventListener("change", function(event) {
-      let fld = doc.getElementById("loc-field");
+    doc.getElementById(ids.locFieldId).addEventListener("change", function(event) {
+      let fld = doc.getElementById(ids.locFieldId);
       let loc = fld.value;
       if (loc == "") return;
       controller.changeLocation(loc);
@@ -45,14 +58,14 @@ class Screen {
 
     // add event listener to select element
     doc
-      .getElementById("base-units")
+      .getElementById(ids.baseUnitsId)
       .addEventListener("change", function(event) {
         controller.switchUnits(event.target.value);
       });
 
     // add event listener to add favorite button
     doc
-      .getElementById("add-favorite-btn")
+      .getElementById(ids.addFavoriteBtnId)
       .addEventListener("click", function(event) {
         controller.addFavorite();
         clearSelect(view._favoritesListId);
@@ -65,9 +78,9 @@ class Screen {
 
     // add event listener to add favorite button
     doc
-      .getElementById("favorites-field")
+      .getElementById(ids.favoritesFieldId)
       .addEventListener("change", function(event) {
-        let fld = doc.getElementById("favorites-field");
+        let fld = doc.getElementById(ids.favoritesFieldId);
         let loc = fld.value;
         if (loc == "") return;
         controller.changeLocation(loc);
@@ -76,7 +89,7 @@ class Screen {
 
     // add event listener to clear favorites button
     doc
-      .getElementById("clear-favorites-btn")
+      .getElementById(ids.clearFavoritesBtnId)
       .addEventListener("click", function(event) {
         controller.clearFavorites();
         clearSelect(view._favoritesListId);
@@ -84,6 +97,19 @@ class Screen {
           view._doc,
           view._favoritesListId,
           controller.getFavorites()
+        );
+      });
+
+    // add event listener to clear history button
+    doc
+      .getElementById(ids.clearHistoryBtnId)
+      .addEventListener("click", function(event) {
+        controller.clearHistory();
+        clearSelect(view._historyListId);
+        populateSelect(
+          view._doc,
+          view._historyListId,
+          controller.getHistory()
         );
       });
   }

@@ -21,6 +21,14 @@ $font-size-location: 12spt;
     padding: 20px 0 20px 0;
   }
 
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-line {
+    margin: 10px 0 10px 0;
+  }
+
   .loc-field {
     flex-grow: 1;
 

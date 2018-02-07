@@ -35,6 +35,12 @@ body {
 .footer {
   padding: 20px 0 20px 0; }
 
+.footer {
+  flex-direction: column; }
+
+.footer-line {
+  margin: 10px 0 10px 0; }
+
 .loc-field {
   flex-grow: 1; }
   .loc-field input[type="text"] {
@@ -94,10 +100,8 @@ body {
   width: 24px;
   height: 24px; }
 
-#add-favorite-btn {
-  color: gold; }
-
-.fa-star {
+.fa-star,
+.fa-history {
   color: gold; }
 
 .fa-times-circle {
@@ -112,10 +116,6 @@ body {
   padding: 5px 8px 5px 8px; }
   .btn:hover {
     opacity: 0.5; }
-
-.clear-history {
-  color: red;
-  border: 1px solid red; }
 
 .wide {
   width: 170px; }

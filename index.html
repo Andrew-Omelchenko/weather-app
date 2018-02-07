@@ -77,12 +77,12 @@
       </section>
     </main>
     <footer class="flex-container footer">
-      <div>
+      <div class="footer-line">
         <span>
           <i class="fa fa-star" aria-hidden="true"></i>
         </span>
         <span>
-          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Select favorite..." />
+          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Favorites..." />
           <datalist id="favorites-lst"></datalist>
         </span>
         <span>
@@ -91,11 +91,17 @@
           </button>
         </span>
       </div>
-      <div>
+      <div class="footer-line">
+        <span>
+          <i class="fa fa-history" aria-hidden="true"></i>
+        </span>
+        <span>
+          <input class="btn wide history" id="history-field" type="text" list="history-lst" placeholder="History..." />
+          <datalist id="history-lst"></datalist>
+        </span>
         <span>
           <button class="btn clear-history" id="clear-history-btn">
-            <i class="fa fa-history" aria-hidden="true"></i>
-            Clear
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>
         </span>
       </div>

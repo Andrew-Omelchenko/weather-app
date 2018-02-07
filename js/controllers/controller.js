@@ -33,6 +33,9 @@ class WeatherController {
             this._weather.country
           }`
         );
+        console.log("Inside changeLocation:");
+        console.log(`Add to history: ${this._weather.location},${this._weather.country}`);
+        this.addHistoryItem(`${this._weather.location},${this._weather.country}`);
       });
   }
 
@@ -56,5 +59,17 @@ class WeatherController {
 
   clearFavorites() {
     this._favoritesService.clear();
+  }
+
+  getHistory() {
+    return this._historyService.data;
+  }
+
+  addHistoryItem(item) {
+    this._historyService.add(item);
+  }
+
+  clearHistory() {
+    this._historyService.clear();
   }
 }
