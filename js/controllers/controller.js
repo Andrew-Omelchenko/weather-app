@@ -4,8 +4,11 @@ class WeatherController {
     this._wnd = wnd;
     this._base = extractBase(this._wnd.location.href);
     this._storageService = new StorageService(this._wnd);
-    this._favoritesService = new FavoritesService(this._storageService);
-    this._historyService = new HistoryService(this._storageService);
+    this._favoritesService = new FavoritesService(
+      this._storageService,
+      "favorites"
+    );
+    this._historyService = new HistoryService(this._storageService, "history");
     this._weatherService = new WeatherService();
     this._weather = new Weather(mockData, "metric");
     this._screen = new Screen(doc, this._weather, this);
@@ -26,7 +29,9 @@ class WeatherController {
         this._wnd.history.pushState(
           {},
           this._doc.title,
-          `${this._base}?city=${this._weather.location},${this._weather.country}`
+          `${this._base}?city=${this._weather.location},${
+            this._weather.country
+          }`
         );
       });
   }
@@ -37,5 +42,15 @@ class WeatherController {
       loc = "Kyiv,UA";
     }
     this.changeLocation(loc);
+  }
+
+  addFavorite() {
+    this._favoritesService.add(
+      `${this._weather.location},${this._weather.country}`
+    );
+  }
+
+  clearFavorites() {
+    this._favoritesService.clear();
   }
 }

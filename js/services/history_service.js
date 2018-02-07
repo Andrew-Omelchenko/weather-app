@@ -1,3 +1,3 @@
 class HistoryService {
-  constructor(storageSvc) {}
+  constructor(storageSvc, name) {}
 }

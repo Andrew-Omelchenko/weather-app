@@ -32,23 +32,34 @@ class Screen {
   }
 
   _addListeners(doc, controller) {
-
     // add event listener to Clear button
-    doc
-      .getElementById("loc-field")
-      .addEventListener("change", function(event) {
-        let fld = doc.getElementById("loc-field");
-        let loc = fld.value;
-        if (loc == "") return;
-        controller.changeLocation(loc);
-        fld.value = "";
-      });
+    doc.getElementById("loc-field").addEventListener("change", function(event) {
+      let fld = doc.getElementById("loc-field");
+      let loc = fld.value;
+      if (loc == "") return;
+      controller.changeLocation(loc);
+      fld.value = "";
+    });
 
     // add event listener to select element
     doc
       .getElementById("base-units")
       .addEventListener("change", function(event) {
         controller.switchUnits(event.target.value);
+      });
+
+    // add event listener to add favorite button
+    doc
+      .getElementById("add-favorite-btn")
+      .addEventListener("click", function(event) {
+        controller.addFavorite();
+      });
+
+    // add event listener to clear favorites button
+    doc
+      .getElementById("clear-favorites-btn")
+      .addEventListener("click", function(event) {
+        controller.clearFavorites();
       });
   }
 

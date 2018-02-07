@@ -17,6 +17,6 @@ class StorageService {
   }
 
   clear() {
-    this._wnd.localStorage.clear(name);
+    this._wnd.localStorage.clear();
   }
 }

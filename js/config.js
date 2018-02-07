@@ -2,6 +2,8 @@ const key = "c7dc2200f66725961863fb901fd1e553";
 const apiLink = "https://api.openweathermap.org/data/2.5/weather?";
 const iconLink = "http://openweathermap.org/img/w/";
 
+const limit = 30;
+
 // Unit systems
 const unitSystems = {
   metric: {
