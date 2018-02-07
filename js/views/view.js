@@ -17,16 +17,19 @@ class Screen {
     this._velocityUnitsId = doc.getElementById(ids.velocityUnitsId);
     this._directionId = doc.getElementById(ids.directionId);
     this._cityListId = doc.getElementById(ids.cityListId);
+    this._favoritesListId = doc.getElementById(ids.favoritesListId);
+    this._clearHistoryId = doc.getElementById(ids.clearHistoryId);
     this._init();
   }
 
   _init() {
-    let opt = null;
-    for (let i = 0; i < cities.length; i++) {
-      opt = this._doc.createElement("option");
-      opt.value = cities[i];
-      this._cityListId.appendChild(opt);
-    }
+
+    populateSelect(this._doc, this._cityListId, cities);
+
+    let favorites = this._controller.getFavorites();
+    console.log("Screen. Getting favorites");
+    console.log(favorites);
+    populateSelect(this._doc, this._favoritesListId, favorites);
 
     this._addListeners(this._doc, this._controller);
   }

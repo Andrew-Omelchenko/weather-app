@@ -82,7 +82,8 @@
           <i class="fa fa-star" aria-hidden="true"></i>
         </span>
         <span>
-          <select class="btn wide" id="favorites-lst"></select>
+          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Select favorite..." />
+          <datalist id="favorites-lst"></datalist>
         </span>
         <span>
           <button class="btn" id="clear-favorites-btn">
@@ -92,14 +93,9 @@
       </div>
       <div>
         <span>
-          <i class="fa fa-history" aria-hidden="true"></i>
-        </span>
-        <span>
-          <select class="btn wide" id="history-lst"></select>
-        </span>
-        <span>
-          <button class="btn" id="clear-history-btn">
-            <i class="fa fa-times-circle" aria-hidden="true"></i>
+          <button class="btn clear-history" id="clear-history-btn">
+            <i class="fa fa-history" aria-hidden="true"></i>
+            Clear
           </button>
         </span>
       </div>

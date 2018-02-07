@@ -8,6 +8,12 @@ class FavoritesService {
     }
   }
 
+  get data() {
+    console.log("FavoritesService. Getting favorites");
+    console.log(this._data);
+    return this._data;
+  }
+
   add(item) {
     // is there the same element?
     for (let elem of this._data) {

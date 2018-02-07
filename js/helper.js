@@ -33,3 +33,12 @@ function toVerbose(value) {
   }
   return "N";
 }
+
+function populateSelect(doc, selectId, data) {
+  let opt = null;
+    for (let elem of data) {
+      opt = doc.createElement("option");
+      opt.value = elem;
+      selectId.appendChild(opt);
+    }
+}

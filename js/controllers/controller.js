@@ -44,6 +44,10 @@ class WeatherController {
     this.changeLocation(loc);
   }
 
+  getFavorites() {
+    return this._favoritesService.data;
+  }
+
   addFavorite() {
     this._favoritesService.add(
       `${this._weather.location},${this._weather.country}`

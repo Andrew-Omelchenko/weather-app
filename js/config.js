@@ -65,7 +65,8 @@ const ids = {
   velocityId: "velocity",
   velocityUnitsId: "velocity-units",
   directionId: "direction",
-  cityListId: "list-of-cities"
+  cityListId: "list-of-cities",
+  favoritesListId: "favorites-lst",
 };
 
 // List of cities

@@ -97,8 +97,7 @@ body {
 #add-favorite-btn {
   color: gold; }
 
-.fa-star,
-.fa-history {
+.fa-star {
   color: gold; }
 
 .fa-times-circle {
@@ -112,7 +111,11 @@ body {
   background: lightblue;
   padding: 5px 8px 5px 8px; }
 
+.clear-history {
+  color: red;
+  border: 1px solid red; }
+
 .wide {
-  width: 100px; }
+  width: 170px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -69,8 +69,7 @@ body {
 	color: $fg-color-sign;
 }
 
-.fa-star,
-.fa-history {
+.fa-star {
 	color: $fg-color-sign;
 }
 
@@ -87,6 +86,11 @@ body {
 	padding: 5px 8px 5px 8px;
 }
 
+.clear-history {
+	color: red;
+	border: 1px solid red;
+}
+
 .wide {
-	width: 100px;
+	width: 170px;
 }
