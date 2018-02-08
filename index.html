@@ -23,11 +23,11 @@
   <body>
     <header class="flex-container header">
       <div class="loc-field">
-        <input class="btn wide" id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." />
+        <input class="btn wide" id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." title="Enter location here">
         <datalist id="list-of-cities"></datalist>
       </div>
       <div class="base-units">
-        <select class="btn" id="base-units">
+        <select class="btn" id="base-units" title="Selects metric or imperial units">
           <option value="metric">&deg;C, m/s</option>
           <option value="imperial">&deg;F, mph</option>
         </select>
@@ -40,7 +40,7 @@
             <div class="location">
               <div id="location">location</div>
               <div>
-                <button class="btn" id="add-favorite-btn">
+                <button class="btn" id="add-favorite-btn" title="Adds city to favorites">
                   <i class="fa fa-star" aria-hidden="true"></i>
                 </button>
               </div>
@@ -82,11 +82,11 @@
           <i class="fa fa-star" aria-hidden="true"></i>
         </span>
         <span>
-          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Favorites..." />
+          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Favorites..." title="List of favorites">
           <datalist id="favorites-lst"></datalist>
         </span>
         <span>
-          <button class="btn" id="clear-favorites-btn">
+          <button class="btn" id="clear-favorites-btn" title="Clears list of favorites">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>
         </span>
@@ -96,11 +96,11 @@
           <i class="fa fa-history" aria-hidden="true"></i>
         </span>
         <span>
-          <input class="btn wide history" id="history-field" type="text" list="history-lst" placeholder="History..." />
+          <input class="btn wide history" id="history-field" type="text" list="history-lst" placeholder="History..." title="History list">
           <datalist id="history-lst"></datalist>
         </span>
         <span>
-          <button class="btn clear-history" id="clear-history-btn">
+          <button class="btn clear-history" id="clear-history-btn" title="Clears history list">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>
         </span>

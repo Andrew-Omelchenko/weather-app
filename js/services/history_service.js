@@ -15,6 +15,16 @@ class HistoryService {
   }
 
   add(item) {
+    // remove duplicates
+    if (this._data && this._data.length > 0) {
+      let tmp = [];
+      for (let elem of this._data) {
+        if (elem != item) {
+          tmp.push(elem);
+        }
+      }
+      this._data = tmp;
+    }
     // check length limit
     if (this._data.length == limit) {
       this._data.shift();
@@ -26,7 +36,7 @@ class HistoryService {
   }
 
   remove(item) {
-    if (!this._data.length || this._data.length == 0) {
+    if (!this._data || this._data.length == 0) {
       return;
     }
     let tmp = [];

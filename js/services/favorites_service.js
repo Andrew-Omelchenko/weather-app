@@ -34,7 +34,7 @@ class FavoritesService {
   }
 
   remove(item) {
-    if (!this._data.length || this._data.length == 0) {
+    if (!this._data || this._data.length == 0) {
       return;
     }
     let tmp = [];
