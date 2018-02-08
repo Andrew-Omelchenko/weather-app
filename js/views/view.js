@@ -45,13 +45,15 @@ class Screen {
 
   _addListeners(view, doc, controller) {
     // add event listener to Clear button
-    doc.getElementById(ids.locFieldId).addEventListener("change", function(event) {
-      let fld = doc.getElementById(ids.locFieldId);
-      let loc = fld.value;
-      if (loc == "") return;
-      controller.changeLocation(loc);
-      fld.value = "";
-    });
+    doc
+      .getElementById(ids.locFieldId)
+      .addEventListener("change", function(event) {
+        let fld = doc.getElementById(ids.locFieldId);
+        let loc = fld.value;
+        if (loc == "") return;
+        controller.changeLocation(loc);
+        fld.value = "";
+      });
 
     // add event listener to select element
     doc
@@ -64,14 +66,16 @@ class Screen {
     doc
       .getElementById(ids.addFavoriteBtnId)
       .addEventListener("click", function(event) {
-        controller.addFavorite();
-        clearSelect(view._favoritesListId);
-        populateSelect(
-          view._doc,
-          view._favoritesListId,
-          controller.getFavorites(),
-          "normal"
-        );
+        let result = controller.addFavorite();
+        if (result) {
+          clearSelect(view._favoritesListId);
+          populateSelect(
+            view._doc,
+            view._favoritesListId,
+            controller.getFavorites(),
+            "normal"
+          );
+        }
       });
 
     // add event listener to add favorite button

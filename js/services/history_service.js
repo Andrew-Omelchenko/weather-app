@@ -15,6 +15,11 @@ class HistoryService {
   }
 
   add(item) {
+    // check last
+    if (item == this._data[this._data.length - 1]) {
+      console.log("Such last entry already exists.");
+      return false;
+    }
     // remove duplicates
     if (this._data && this._data.length > 0) {
       let tmp = [];
@@ -33,6 +38,7 @@ class HistoryService {
     this._data.push(item);
     this._storageService.write(this._data, this._name);
     console.log(this._data);
+    return true;
   }
 
   remove(item) {

@@ -18,8 +18,8 @@ class FavoritesService {
     // is there the same element?
     for (let elem of this._data) {
       if (elem == item) {
-        console.log("Irem is already present.")
-        return;
+        console.log("Item is already present.")
+        return false;
       }
     }
     // check length limit
@@ -31,6 +31,7 @@ class FavoritesService {
     this._data.sort();
     this._storageService.write(this._data, this._name);
     console.log(this._data);
+    return true;
   }
 
   remove(item) {

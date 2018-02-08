@@ -34,16 +34,17 @@ class WeatherController {
           }`
         );
         console.log("Inside changeLocation:");
-        console.log(`Add to history: ${this._weather.location},${this._weather.country}`);
-        this.addHistoryItem(`${this._weather.location},${this._weather.country}`);
-        let listId = this._doc.getElementById(ids.historyListId);;
-        clearSelect(listId);
-        populateSelect(
-          this._doc,
-          listId,
-          this.getHistory(),
-          "reverse"
+        console.log(
+          `Add to history: ${this._weather.location},${this._weather.country}`
         );
+        let result = this.addHistoryItem(
+          `${this._weather.location},${this._weather.country}`
+        );
+        if (result) {
+          let listId = this._doc.getElementById(ids.historyListId);
+          clearSelect(listId);
+          populateSelect(this._doc, listId, this.getHistory(), "reverse");
+        }
       });
   }
 
@@ -60,7 +61,7 @@ class WeatherController {
   }
 
   addFavorite() {
-    this._favoritesService.add(
+    return this._favoritesService.add(
       `${this._weather.location},${this._weather.country}`
     );
   }
@@ -74,7 +75,7 @@ class WeatherController {
   }
 
   addHistoryItem(item) {
-    this._historyService.add(item);
+    return this._historyService.add(item);
   }
 
   clearHistory() {
