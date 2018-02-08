@@ -1,10 +1,11 @@
-$bg-color-main-body: lightblue;
-$fg-color-main-body: white;
-$bg-color-main-panel: lightblue;
+$bg-color-main-body: lightgray;
+$fg-color-main-body: black;
+$bg-color-main-panel: lightgray;
 $fg-color-location: maroon;
 $fg-color-sign: gold;
 $fg-warning-color: red;
-$font-size-location: 12spt;
+$font-size-location: 12pt;
+$border-color: gray;
 
 @mixin flex-settings {
 
@@ -12,21 +13,25 @@ $font-size-location: 12spt;
     padding: 20px;
     background: $bg-color-main-panel;
     border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid $border-color;
     line-height: 1.5;
   }
 
   .header,
   .footer {
     padding: 20px 0 20px 0;
-  }
-
-  .footer {
     flex-direction: column;
   }
 
-  .footer-line {
-    margin: 10px 0 10px 0;
+  .favorites,
+  .history {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+    input[type="text"] {
+      width: 70%;
+    }
   }
 
   .loc-field {

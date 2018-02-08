@@ -77,7 +77,7 @@ body {
 .btn {
 	font-size: 12pt;
 	border-radius: 5px;
-	border: 1px solid white;
+	border: 1px solid $border-color;
 	color: $fg-color-main-body;
 	background: $bg-color-main-body;
 	padding: 5px 8px 5px 8px;
@@ -85,8 +85,4 @@ body {
 	&:hover {
 		opacity: 0.5;
 	}
-}
-
-.wide {
-	width: 170px;
 }

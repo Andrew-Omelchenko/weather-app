@@ -71,9 +71,11 @@ const ids = {
   cityListId: "list-of-cities",
   favoritesFieldId: "favorites-field",
   favoritesListId: "favorites-lst",
+  favoritesGoBtnId:"favorites-go-btn",
   clearFavoritesBtnId: "clear-favorites-btn",
   historyFieldId: "history-field",
   historyListId: "history-lst",
+  historyGoBtnId:"history-go-btn",
   clearHistoryBtnId: "clear-history-btn"
 };
 

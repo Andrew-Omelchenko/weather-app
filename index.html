@@ -22,16 +22,18 @@
     <title>Weather App</title>
   </head>
   <body>
-    <header class="flex-container header">
-      <div class="loc-field">
-        <input class="btn wide" id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." title="Enter location here">
-        <datalist id="list-of-cities"></datalist>
-      </div>
-      <div class="base-units">
-        <select class="btn" id="base-units" title="Selects metric or imperial units">
-          <option value="metric">&deg;C, m/s</option>
-          <option value="imperial">&deg;F, mph</option>
-        </select>
+    <header class="header">
+      <div class="flex-container">
+        <div class="loc-field">
+          <input class="btn wide" id="loc-field" type="text" list="list-of-cities" placeholder="Enter location..." title="Enter location here">
+          <datalist id="list-of-cities"></datalist>
+        </div>
+        <div class="base-units">
+          <select class="btn" id="base-units" title="Selects metric or imperial units">
+            <option value="metric">&deg;C, m/s</option>
+            <option value="imperial">&deg;F, mph</option>
+          </select>
+        </div>
       </div>
     </header>
     <main>
@@ -78,13 +80,18 @@
       </section>
     </main>
     <footer class="flex-container footer">
-      <div class="footer-line">
+      <div class="favorites">
         <span>
           <i class="fa fa-star" aria-hidden="true"></i>
         </span>
         <span>
-          <input class="btn wide favorites" id="favorites-field" type="text" list="favorites-lst" placeholder="Favorites..." title="List of favorites">
+          <input class="btn" id="favorites-field" type="text" list="favorites-lst" placeholder="Favorites..." title="List of favorites">
           <datalist id="favorites-lst"></datalist>
+        </span>
+        <span>
+          <button class="btn" id="favorites-go-btn" title="Loads selected city data">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
         </span>
         <span>
           <button class="btn" id="clear-favorites-btn" title="Clears list of favorites">
@@ -92,16 +99,21 @@
           </button>
         </span>
       </div>
-      <div class="footer-line">
+      <div class="history">
         <span>
           <i class="fa fa-history" aria-hidden="true"></i>
         </span>
         <span>
-          <input class="btn wide history" id="history-field" type="text" list="history-lst" placeholder="History..." title="History list">
+          <input class="btn" id="history-field" type="text" list="history-lst" placeholder="History..." title="History list">
           <datalist id="history-lst"></datalist>
         </span>
         <span>
-          <button class="btn clear-history" id="clear-history-btn" title="Clears history list">
+          <button class="btn" id="history-go-btn" title="Loads selected city data">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </span>
+        <span>
+          <button class="btn" id="clear-history-btn" title="Clears history list">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>
         </span>

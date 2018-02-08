@@ -78,10 +78,10 @@ class Screen {
         }
       });
 
-    // add event listener to add favorite button
+    // add event listener to go to favorite button
     doc
-      .getElementById(ids.favoritesFieldId)
-      .addEventListener("change", function(event) {
+      .getElementById(ids.favoritesGoBtnId)
+      .addEventListener("click", function(event) {
         let fld = doc.getElementById(ids.favoritesFieldId);
         let loc = fld.value;
         if (loc == "") return;
@@ -101,6 +101,19 @@ class Screen {
           controller.getFavorites(),
           "normal"
         );
+        let fld = doc.getElementById(ids.favoritesFieldId);
+        fld.value = "";
+      });
+
+    // add event listener to go to history item button
+    doc
+      .getElementById(ids.historyGoBtnId)
+      .addEventListener("click", function(event) {
+        let fld = doc.getElementById(ids.historyFieldId);
+        let loc = fld.value;
+        if (loc == "") return;
+        controller.changeLocation(loc);
+        fld.value = "";
       });
 
     // add event listener to clear history button
@@ -115,6 +128,8 @@ class Screen {
           controller.getHistory(),
           "reverse"
         );
+        let fld = doc.getElementById(ids.historyFieldId);
+        fld.value = "";
       });
   }
 
